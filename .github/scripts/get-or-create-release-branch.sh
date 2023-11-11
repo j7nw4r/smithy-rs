@@ -67,6 +67,8 @@ if ! git ls-remote --exit-code --heads origin "${branch_name}"; then
     # We can then create the release branch and set the current commit as its tip
     if [[ "${DRY_RUN}" == "true" ]]; then
       git push --force origin "HEAD:refs/heads/${branch_name}"
+      echo "Would execute: git checkout -b ${branch_name}"
+      echo "Would execute: git push origin ${branch_name}"
     else
       git checkout -b "${branch_name}"
       git push origin "${branch_name}"
