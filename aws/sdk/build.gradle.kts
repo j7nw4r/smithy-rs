@@ -120,7 +120,8 @@ fun generateSmithyBuild(services: AwsServices): String {
                                 "generateReadme": true,
                                 "awsConfigVersion": "$awsConfigVersion",
                                 "defaultConfigPath": "${services.defaultConfigPath}",
-                                "endpointsConfigPath": "${services.endpointsConfigPath}",
+                                "productionSdkBuild": true,
+                                "partitionsConfigPath": "${services.partitionsConfigPath}",
                                 "integrationTestPath": "${project.projectDir.resolve("integration-tests")}"
                             }
                         }
